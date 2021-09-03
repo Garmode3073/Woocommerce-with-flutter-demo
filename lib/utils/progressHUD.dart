@@ -5,7 +5,7 @@ class ProgressHUD extends StatelessWidget {
   final bool inAsyncCall;
   final double opacity;
   final Color color;
-  final Animation<Color> valueColor;
+  //final Animation<Color> valueColor;
 
   ProgressHUD({
     Key? key,
@@ -13,7 +13,7 @@ class ProgressHUD extends StatelessWidget {
     required this.inAsyncCall,
     this.opacity = 0.3,
     this.color = Colors.grey,
-    required this.valueColor,
+    //this.valueColor,
   }) : super(key: key);
 
   @override

@@ -9,8 +9,8 @@ class FormHelper {
     bool isNumberInput = false,
     obscureText: false,
     required Function onValidate,
-    required Widget prefixIcon,
-    required Widget suffixIcon,
+    Widget? prefixIcon,
+    Widget? suffixIcon,
   }) {
     return TextFormField(
       initialValue: initialValue != null ? initialValue.toString() : "",
@@ -127,7 +127,7 @@ class FormHelper {
           title: new Text(title),
           content: new Text(message),
           actions: [
-            new FlatButton(
+            new TextButton(
               onPressed: () {
                 return onPressed();
               },
