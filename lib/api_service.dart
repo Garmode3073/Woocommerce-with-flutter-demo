@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:woodemo/config.dart';
 import 'package:woodemo/models/customer.dart';
+import 'package:woodemo/models/login_model.dart';
 
 class APIService {
   Future<bool> createCustomer(CustomerModel model) async {
@@ -31,5 +32,27 @@ class APIService {
     }
 
     return ret;
+  }
+
+  Future<LoginResponseModel> loginCustomer(
+      String username, String password) async {
+    LoginResponseModel model = LoginResponseModel();
+
+    try {
+      var response = await Dio().post(Config.tokenurl,
+          data: {
+            "username": username,
+            "password": password,
+          },
+          options: Options(headers: {
+            HttpHeaders.contentTypeHeader: "application/x-www-form-urlencoded"
+          }));
+      if (response.statusCode == 200) {
+        model = LoginResponseModel.fromJson(response.data);
+      }
+    } on DioError catch (e) {
+      print(e.message);
+    }
+    return model;
   }
 }

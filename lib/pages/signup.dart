@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:string_validator/string_validator.dart';
 import 'package:woodemo/api_service.dart';

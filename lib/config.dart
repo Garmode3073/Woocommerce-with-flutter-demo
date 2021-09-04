@@ -5,4 +5,6 @@ class Config {
       ""; //wordpress site url in the format "https://someapp.domain.com/wp-json/wc/v3/"
   static String customer =
       ""; //this field will contain the simple string "customers"
+  static String tokenurl =
+      ""; //wordpress site url in the format "https://someapp.domain.com/wp-json/jwt-auth/v1/token"
 }
