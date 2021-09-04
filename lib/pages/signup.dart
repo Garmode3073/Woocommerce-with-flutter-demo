@@ -143,6 +143,12 @@ class _SignUpState extends State<SignUp> {
                           FormHelper.showMessage(context, "WooCommerce App",
                               "Registration Successful", "Ok", () {
                             Navigator.of(context).pop();
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) => SignUp(),
+                              ),
+                            );
                           });
                         } else {
                           FormHelper.showMessage(context, "WooCommerce App",
@@ -153,6 +159,24 @@ class _SignUpState extends State<SignUp> {
                       });
                     }
                   }),
+                ),
+                MaterialButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => SignUp(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    'Sign Up',
+                    style: TextStyle(
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.blueAccent,
+                    ),
+                  ),
                 ),
               ],
             ),

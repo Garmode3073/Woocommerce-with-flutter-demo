@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:string_validator/string_validator.dart';
 import 'package:woodemo/api_service.dart';
+import 'package:woodemo/pages/signup.dart';
 import 'package:woodemo/utils/form_helper.dart';
 import 'package:woodemo/utils/progressHUD.dart';
 
@@ -185,6 +186,13 @@ class _LoginPageState extends State<LoginPage> {
                                         "Login Successful",
                                         "Ok", () {
                                       Navigator.of(context).pop();
+                                      Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (BuildContext context) =>
+                                              SignUp(),
+                                        ),
+                                      );
                                     });
                                   } else {
                                     FormHelper.showMessage(
@@ -208,6 +216,24 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         SizedBox(
                           height: 15,
+                        ),
+                        MaterialButton(
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) => SignUp(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            'Sign Up',
+                            style: TextStyle(
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.blueAccent,
+                            ),
+                          ),
                         ),
                       ],
                     ),

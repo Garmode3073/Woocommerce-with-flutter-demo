@@ -9,16 +9,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Widget> _widgetList = [
-    DashboardPage(),
-    DashboardPage(),
-    DashboardPage(),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(),
+      body: DashboardPage(),
     );
   }
 
