@@ -1,5 +1,6 @@
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
+import 'package:woodemo/widget/home_categories.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({Key? key}) : super(key: key);
@@ -17,6 +18,7 @@ class _DashboardPageState extends State<DashboardPage> {
         child: ListView(
           children: [
             imageCarousel(context),
+            WidgetCategories(),
           ],
         ),
       ),
