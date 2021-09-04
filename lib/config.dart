@@ -7,4 +7,6 @@ class Config {
       ""; //this field will contain the simple string "customers"
   static String tokenurl =
       ""; //wordpress site url in the format "https://someapp.domain.com/wp-json/jwt-auth/v1/token"
+  static String categoriesURL =
+      ""; //this category will contain a simple string like 'products/categories'
 }

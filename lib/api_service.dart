@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:woodemo/config.dart';
+import 'package:woodemo/models/category.dart';
 import 'package:woodemo/models/customer.dart';
 import 'package:woodemo/models/login_model.dart';
 
@@ -54,5 +55,30 @@ class APIService {
       print(e.message);
     }
     return model;
+  }
+
+  Future<List<Category>> getCategories() async {
+    List<Category> data = <Category>[];
+
+    try {
+      String url = Config.url +
+          Config.categoriesURL +
+          "?consumer_key=${Config.key}&consumer_secret=${Config.secret}";
+      var response = await Dio().get(
+        url,
+        options: Options(
+          headers: {
+            HttpHeaders.contentTypeHeader: "application/json",
+          },
+        ),
+      );
+      if (response.statusCode == 200) {
+        data =
+            (response.data as List).map((e) => Category.fromJson(e)).toList();
+      }
+    } on DioError catch (e) {
+      print(e.response);
+    }
+    return data;
   }
 }

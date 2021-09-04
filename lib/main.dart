@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:woodemo/pages/login_page.dart';
 import 'package:woodemo/pages/signup.dart';
 
 void main() {
@@ -34,6 +35,6 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-        home: SignUp());
+        home: LoginPage());
   }
 }

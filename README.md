@@ -8,4 +8,6 @@
 
 ## Step 4: Initialize the API key, secret, url, etc in that folder
 
-## Step 5: Save the changes and run the app using "flutter run" command
+## Step 5: In "ProjectFolder/lib/screens/dashboard_page.dart" add url for images in carousel in homepage
+
+## Step 6: Save the changes and run the app using "flutter run" command
